@@ -9,9 +9,9 @@ namespace SistemaVotoAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddDbContext<Context>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("Context") ?? throw new InvalidOperationException("Connection string 'Context' not found.")));
-
+            builder.Services.AddDbContext<SistemaVotoAPIContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("SistemaVotoAPIContext") ?? throw new InvalidOperationException("Connection string 'SistemaVotoAPIContext' not found.")));
+           
             // Add services to the container.
 
             builder.Services.AddControllers();
